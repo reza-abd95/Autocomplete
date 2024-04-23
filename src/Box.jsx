@@ -1,21 +1,25 @@
 import React from "react";
 import { shortenText } from "./helper/helper";
+import styles from "./Box.module.css";
+import ItmeList from "./ItmeList";
 
-function Box({ products, text, setText }) {
+function Box({ products, text, setText, showHandler }) {
   console.log(text);
   const newProducts = products.filter((p) =>
-    p.title.toLowerCase().includes(text.toLowerCase().trim())
+    shortenText(p.title).toLowerCase().includes(text.toLowerCase().trim())
   );
 
   return (
-    <div>
-      <ul>
-        {newProducts.map((p) => (
-          <li key={p.id} onClick={() => setText(shortenText(p.title))}>
-            {shortenText(p.title)}
-          </li>
-        ))}
-      </ul>
+    <div className={styles.box}>
+      {Object.keys(newProducts).length === 0 ? (
+        <div> Nothing Found </div>
+      ) : (
+        <ul>
+          {newProducts.map((p) => (
+            <ItmeList p={p} showHandler={showHandler} setText={setText} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.li {
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 4px 0;
+}
+.li:hover {
+  background-color: cadetblue;
+}

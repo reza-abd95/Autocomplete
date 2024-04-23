@@ -1,0 +1,9 @@
+.box {
+  width: 500px;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: burlywood;
+  max-height: 400px;
+  overflow-y: scroll;
+}
