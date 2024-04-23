@@ -4,21 +4,23 @@ import Box from "./Box";
 
 function Autocomplete() {
   const [text, setText] = useState("");
-  const [titles, setTitles] = useState([]);
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/posts`).then((res) => {
+    axios.get(`https://fakestoreapi.com/products`).then((res) => {
       const data = res.data;
-      setTitles(data);
+      setProducts(data);
     });
-  }, []);
+  }, [text]);
+
+  const searchHandler = (e) => {
+    setText(e.target.value);
+  };
+
   return (
     <div>
-      <input
-        placeholder="Search"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      <Box titles={titles} />
+      <input placeholder="Search" value={text} onChange={searchHandler} />
+      <Box products={products} text={text} setText={setText} />
     </div>
   );
 }
