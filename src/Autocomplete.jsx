@@ -1,10 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Box from "./Box";
+import updown from "./assets/updown2.png";
+
+import styles from "./Autocomplete.module.css";
 
 function Autocomplete() {
   const [text, setText] = useState("");
   const [products, setProducts] = useState([]);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products`).then((res) => {
@@ -15,12 +19,39 @@ function Autocomplete() {
 
   const searchHandler = (e) => {
     setText(e.target.value);
+    if (!!e.target.value) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
+
+  const showHandler = () => {
+    setShow((show) => !show);
   };
 
   return (
-    <div>
-      <input placeholder="Search" value={text} onChange={searchHandler} />
-      <Box products={products} text={text} setText={setText} />
+    <div className={styles.container}>
+      <div className={styles.inputbox}>
+        <input
+          className={styles.input}
+          placeholder="Search"
+          value={text}
+          onChange={searchHandler}
+        />
+        <button className={styles.button} onClick={showHandler}>
+          <img src={updown} alt="updown" className={styles.icon} />
+        </button>
+      </div>
+      {show && (
+        <Box
+          products={products}
+          text={text}
+          setText={setText}
+          setShow={setShow}
+          showHandler={showHandler}
+        />
+      )}
     </div>
   );
 }
