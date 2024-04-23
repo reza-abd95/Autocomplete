@@ -4,7 +4,6 @@ import styles from "./Box.module.css";
 import ItmeList from "./ItmeList";
 
 function Box({ products, text, setText, showHandler }) {
-  console.log(text);
   const newProducts = products.filter((p) =>
     shortenText(p.title).toLowerCase().includes(text.toLowerCase().trim())
   );

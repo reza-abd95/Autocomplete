@@ -3,7 +3,11 @@
   border-radius: 8px;
   cursor: pointer;
   margin: 4px 0;
+  font-size: 1.1rem;
 }
 .li:hover {
-  background-color: cadetblue;
+  background-color: rgb(223, 179, 122);
+}
+.active {
+  background-color: red;
 }

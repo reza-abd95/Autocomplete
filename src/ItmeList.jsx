@@ -9,7 +9,7 @@ function ItmeList({ p, setText, showHandler }) {
   };
   return (
     <>
-      <li className={styles.li} key={p.id} onClick={clickHandler}>
+      <li className={`${styles.li} `} key={p.id} onClick={clickHandler}>
         {shortenText(p.title)}
       </li>
     </>
