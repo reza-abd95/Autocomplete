@@ -16,6 +16,8 @@ body {
     rgba(157, 190, 183, 1) 0%,
     rgba(239, 230, 213, 0.5243347338935574) 40%
   );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 * {

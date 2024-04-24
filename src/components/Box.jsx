@@ -9,7 +9,7 @@ function Box({ products, text, setText, showHandler }) {
   );
 
   return (
-    <div className={styles.box}>
+    <div className={styles.box} onClick={(e) => e.stopPropagation()}>
       {Object.keys(newProducts).length === 0 ? (
         <div> Nothing Found </div>
       ) : (

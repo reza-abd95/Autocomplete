@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 10px;
   background-color: #9dbeb788;
-  width: 1000px;
+  width: 1100px;
   height: 600px;
   border-radius: 8px;
   align-items: center;
@@ -54,6 +54,11 @@
   height: 100%;
 }
 
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 980px;
+  }
+}
 @media screen and (max-width: 1000px) {
   .container {
     width: 790px;
@@ -86,6 +91,7 @@
 @media screen and (max-width: 400px) {
   .container {
     width: 370px;
+    height: 500px;
   }
   .inputbox {
     width: 300px;
