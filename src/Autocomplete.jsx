@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Box from "./Box";
 import updown from "./assets/updown2.png";
 
@@ -29,10 +29,13 @@ function Autocomplete() {
   const showHandler = () => {
     setShow((show) => !show);
   };
+  const closeHandler = () => {
+    setShow(false);
+  };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.inputbox}>
+    <div className={styles.container} onClick={closeHandler}>
+      <div className={styles.inputbox} onClick={(e) => e.stopPropagation()}>
         <input
           className={styles.input}
           placeholder="Search"

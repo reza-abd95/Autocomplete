@@ -6,7 +6,8 @@
   font-size: 1.1rem;
 }
 .li:hover {
-  background-color: rgb(223, 179, 122);
+  background-color: #e73213;
+  color: white;
 }
 .active {
   background-color: red;
