@@ -5,14 +5,15 @@ import check from "../assets/check.png";
 
 function ItmeList({ p, text, setText, showHandler }) {
   const [active, setActive] = useState(false);
+  const title = shortenText(p.title);
 
   const clickHandler = () => {
-    setText(shortenText(p.title));
+    setText(title);
     showHandler(false);
   };
 
   useEffect(() => {
-    if (shortenText(p.title) === text) {
+    if (title === text) {
       setActive(true);
     }
   }, []);
@@ -21,7 +22,7 @@ function ItmeList({ p, text, setText, showHandler }) {
     <>
       <li className={styles.li} key={p.id} onClick={clickHandler}>
         {active && <img src={check} alt="updown" className={styles.icon} />}
-        {shortenText(p.title)}
+        {title}
       </li>
     </>
   );
