@@ -20,6 +20,7 @@ function Box({ products, text, setText, showHandler }) {
               p={p}
               showHandler={showHandler}
               setText={setText}
+              text={text}
             />
           ))}
         </ul>
