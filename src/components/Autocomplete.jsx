@@ -4,6 +4,7 @@ import Box from "./Box";
 import updown from "../assets/updown2.png";
 
 import styles from "./Autocomplete.module.css";
+import { shortenText } from "../helper/helper";
 
 function Autocomplete() {
   const [text, setText] = useState("");
@@ -16,6 +17,13 @@ function Autocomplete() {
       setProducts(data);
     });
   }, [text]);
+
+  useEffect(() => {
+    axios.get(`https://fakestoreapi.com/products/1`).then((res) => {
+      const data = res.data;
+      setText(shortenText(data.title));
+    });
+  }, []);
 
   const searchHandler = (e) => {
     setText(e.target.value);
