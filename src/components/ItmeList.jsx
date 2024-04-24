@@ -1,5 +1,5 @@
 import React from "react";
-import { shortenText } from "./helper/helper";
+import { shortenText } from "../helper/helper";
 import styles from "./ItemList.module.css";
 
 function ItmeList({ p, setText, showHandler }) {

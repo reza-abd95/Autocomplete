@@ -1,4 +1,4 @@
-import Autocomplete from "./Autocomplete";
+import Autocomplete from "./components/Autocomplete";
 
 function App() {
   return (

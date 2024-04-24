@@ -1,5 +1,5 @@
 import React from "react";
-import { shortenText } from "./helper/helper";
+import { shortenText } from "../helper/helper";
 import styles from "./Box.module.css";
 import ItmeList from "./ItmeList";
 
@@ -15,7 +15,12 @@ function Box({ products, text, setText, showHandler }) {
       ) : (
         <ul>
           {newProducts.map((p) => (
-            <ItmeList p={p} showHandler={showHandler} setText={setText} />
+            <ItmeList
+              key={p.id}
+              p={p}
+              showHandler={showHandler}
+              setText={setText}
+            />
           ))}
         </ul>
       )}

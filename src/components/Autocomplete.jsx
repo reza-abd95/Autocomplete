@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "./Box";
-import updown from "./assets/updown2.png";
+import updown from "../assets/updown2.png";
 
 import styles from "./Autocomplete.module.css";
 
